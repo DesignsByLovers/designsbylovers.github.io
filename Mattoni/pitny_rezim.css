@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.menu_cely {
+    position: sticky;
+    top: 10px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+}
+.logo {
+    display: flex;
+    position: relative;
+    height: 50px;
+    justify-items: center;
+    margin: 15px;
+    padding-left: 30px;
+}
+.menu {
+    display: absolute;
+    position: relative;
+    font-display: flex;
+    background: #0D234C;
+    border-radius: 15px;
+    align-content: center;
+}
+.menu a {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    color: #F5F9FC;
+    text-decoration: none;
+    padding: 5px 25px;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+}
+.menu a:hover {
+    background: #081631;
+    height: 100%;
+    align-content: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.footer {
+    width: 95%;
+    background-color:#6a0019;
+    padding: 40px 30px 20px 30px;
+    margin: auto;
+    border: none;
+    border-radius: 30px;
+}
+
+.footer-horni {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+
+.footer-sloupec {
+    width: 20%;
+    min-width: 180px;
+}
+
+.footer-sloupec h3 {
+    color:#CC0935;
+    font-size: 160%;
+    font-weight:bold;
+    margin: 0 0 15px 0;
+}
+
+.footer-sloupec ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-sloupec ul li {
+    color: white;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 0 5px 0;
+}
+
+.footer-sloupec ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-sloupec ul li a:hover {
+    color:#CC0935;
+}
+
+.footer-spodni {
+    width: 100%;
+    border-top: 1px solid #ffffff;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-copy {
+    color: white;
+    font-size: 14px;
+}
+
+.footer-pravni {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-pravni a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-pravni a:hover {
+    color:#CC0935;
+}
