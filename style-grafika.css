@@ -1,0 +1,235 @@
+/* ===== GRAFIKA — portfolio mozaika ===== */
+:root {
+  --g-ink: #4a0909;
+  --g-deep: #4c300e;
+  --g-accent: #821515;
+  --g-warm: #bd9e7a;
+  --g-cream: #ffe9be;
+  --g-cream-soft: #f7e0b3;
+}
+
+.hero--mini { min-height: auto; padding-bottom: 60px; }
+.hero--mini .hero-shell { min-height: auto; }
+
+.gr-hero {
+  padding: 60px 0 30px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+.gr-h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.95;
+  color: var(--g-cream);
+  margin: 18px 0 22px;
+}
+.gr-h1 .it { font-style: italic; color: var(--g-cream-soft); }
+.gr-lead { max-width: 500px; color: rgba(255,233,190,0.7); line-height: 1.8; font-size: 0.98rem; }
+
+.gr-stats {
+  display: flex;
+  gap: 32px;
+  justify-content: flex-end;
+  border-left: 1px solid rgba(255,233,190,0.18);
+  padding: 8px 0 8px 28px;
+}
+.gr-stat { display: flex; flex-direction: column; gap: 4px; }
+.gr-stat .num {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: var(--g-cream);
+  line-height: 1;
+}
+.gr-stat .lbl {
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,233,190,0.5);
+}
+
+/* SEKCE */
+.gr-sekce {
+  background: var(--g-cream);
+  padding: 90px 6% 130px;
+  position: relative;
+}
+.gr-shell { max-width: 1400px; margin: 0 auto; }
+
+/* ===== MOZAIKA — CSS grid s named areas ===== */
+.gr-mozaika {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 140px;
+  gap: 18px;
+}
+
+/* Velikosti */
+.gr-karta { grid-column: span 4; grid-row: span 2; } /* default čtverec-ish */
+.gr-ctverec { grid-column: span 3; grid-row: span 2; }
+.gr-vyska   { grid-column: span 3; grid-row: span 3; }
+.gr-sirka   { grid-column: span 6; grid-row: span 2; }
+.gr-velka   { grid-column: span 6; grid-row: span 3; }
+
+/* Vzhled karty */
+.gr-karta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ffe9be, #f7e0b3);
+  border: 1px solid rgba(74,9,9,0.1);
+  cursor: pointer;
+  transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.6s, border-color 0.5s;
+  box-shadow: 0 6px 18px rgba(74,9,9,0.06);
+}
+.gr-karta img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.gr-karta:hover img {
+  transform: scale(1.05);
+}
+.gr-karta.gr-tmava {
+  background: linear-gradient(135deg, #2a0606, #4a0909);
+  border-color: rgba(255,233,190,0.12);
+}
+.gr-karta.gr-svetla {
+  background: linear-gradient(135deg, #ffffff, #ffe9be);
+}
+
+/* Pseudo dekorativní vzor (než přijdou obrázky) */
+.gr-karta::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(130,21,21,0.18), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(189,158,122,0.25), transparent 60%);
+  opacity: 0.7;
+  transition: opacity 0.6s, transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+.gr-karta.gr-tmava::before {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,233,190,0.12), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(189,158,122,0.18), transparent 60%);
+}
+
+/* Číslo dekorativní */
+.gr-karta::after {
+  content: attr(data-i);
+  position: absolute;
+  top: 16px; left: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--g-ink);
+  opacity: 0.45;
+  z-index: 1;
+}
+.gr-karta.gr-tmava::after { color: var(--g-cream); opacity: 0.55; }
+
+/* Overlay s popiskem */
+.gr-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 22px;
+  z-index: 2;
+  background: linear-gradient(180deg, transparent 50%, rgba(74,9,9,0.7));
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s, transform 0.55s;
+}
+.gr-karta:hover .gr-overlay { opacity: 1; transform: translateY(0); }
+.gr-karta:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(74,9,9,0.28); border-color: var(--g-ink); }
+.gr-karta:hover::before { transform: scale(1.08); }
+
+.gr-cat {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--g-cream-soft);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.gr-titul {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: var(--g-cream);
+  line-height: 1.1;
+}
+
+/* Reveal */
+.gr-karta {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(.2,.7,.2,1), transform 0.8s cubic-bezier(.2,.7,.2,1),
+              box-shadow 0.6s, border-color 0.5s;
+}
+.gr-karta.in-view { opacity: 1; transform: translateY(0); }
+.gr-karta.in-view:hover { transform: translateY(-8px); }
+
+/* CTA */
+.gr-cta {
+  text-align: center;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.gr-cta p {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  color: var(--g-ink);
+}
+.gr-tlacitko {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--g-ink);
+  color: var(--g-cream);
+  padding: 16px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.5s, transform 0.5s, color 0.5s;
+}
+.gr-tlacitko:hover { background: var(--g-accent); transform: translateY(-3px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+  .gr-mozaika { grid-template-columns: repeat(8, 1fr); grid-auto-rows: 130px; }
+  .gr-karta { grid-column: span 4; grid-row: span 2; }
+  .gr-ctverec { grid-column: span 4; grid-row: span 2; }
+  .gr-vyska   { grid-column: span 4; grid-row: span 3; }
+  .gr-sirka   { grid-column: span 8; grid-row: span 2; }
+  .gr-velka   { grid-column: span 8; grid-row: span 3; }
+}
+@media (max-width: 900px) {
+  .gr-hero { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+  .gr-stats { justify-content: flex-start; border-left: none; padding-left: 0; }
+}
+@media (max-width: 700px) {
+  .gr-mozaika { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 110px; gap: 12px; }
+  .gr-karta, .gr-ctverec { grid-column: span 4; grid-row: span 2; }
+  .gr-vyska { grid-column: span 4; grid-row: span 3; }
+  .gr-sirka, .gr-velka { grid-column: span 4; grid-row: span 2; }
+  .gr-titul { font-size: 1.3rem; }
+  .gr-sekce { padding: 60px 5% 100px; }
+  /* Na malé obrazovce vždy odhalíme overlay – aby šlo všechno přečíst */
+  .gr-overlay { opacity: 1; transform: translateY(0); }
+}

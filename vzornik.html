@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vzorník — Designs By Lovers</title>
+  <meta name="description" content="Vzorník barev a typografie Designs By Lovers — tmavé barvy, světlé barvy a fonty pro vaši značku." />
+  <link rel="stylesheet" href="style-index.css" />
+  <link rel="stylesheet" href="style-vzornik.css" />
+</head>
+<body class="vzornik-page">
+  <div class="blur-kruh kruh1"></div>
+  <div class="blur-kruh kruh2"></div>
+  <div class="blur-kruh kruh3"></div>
+
+  <section class="hero hero--mini">
+    <div class="hero-shell">
+      <header>
+        <nav class="navbar">
+          <div class="leva-strana">
+            <div class="dropdown">
+              <input type="checkbox" id="onas-toggle" />
+              <label for="onas-toggle" class="nav-odkaz">01 O NÁS</label>
+              <div class="dropdown-menu">
+                <a href="adam.html">Pan Adam</a>
+                <a href="adela.html">Slečna Adéla</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <input type="checkbox" id="sluzby-toggle" />
+              <label for="sluzby-toggle" class="nav-odkaz aktivni">02 SLUŽBY</label>
+              <div class="dropdown-menu">
+                <a href="sluzby.html">Služby</a>
+                <a href="cenik.html">Ceník</a>
+                <a href="vzornik.html">Vzorník</a>
+              </div>
+            </div>
+          </div>
+
+          <a href="index.html" class="stred-navbaru" aria-label="Designs By Lovers — domů">
+            <img src="assets/logo.svg" alt="Logo Designs By Lovers" class="logo-mark" />
+            <span class="male-dbl">DESIGNS BY LOVERS</span>
+          </a>
+
+          <div class="prava-strana">
+            <a href="weby.html" class="nav-link">03 WEBY</a>
+            <a href="grafika.html" class="nav-link">04 GRAFIKA</a>
+          </div>
+
+          <input type="checkbox" id="mobilni-menu-toggle" />
+          <label for="mobilni-menu-toggle" class="hamburger">☰</label>
+          <div class="mobilni-menu">
+            <a href="adam.html">Pan Adam</a>
+            <a href="adela.html">Slečna Adéla</a>
+            <a href="sluzby.html">Služby</a>
+            <a href="cenik.html">Ceník</a>
+            <a href="vzornik.html">Vzorník</a>
+            <a href="weby.html">Weby</a>
+            <a href="grafika.html">Grafika</a>
+          </div>
+        </nav>
+      </header>
+
+      <div class="vz-hero">
+        <div class="vz-hero-text reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-cara"></span>
+            <span class="male-texty">02 — SLUŽBY • VZORNÍK</span>
+          </div>
+          <h1 class="vz-h1">Vzorník<br/><span class="it">barev &amp; písma.</span></h1>
+          <p class="vz-lead">
+            Kurátorovaná paleta odstínů a typografie, ze které čerpáme pro každý projekt.
+            Tmavé tóny pro hloubku, světlé pro vzdušnost a fonty, které dají značce hlas.
+          </p>
+        </div>
+
+        <nav class="vz-subnav reveal delay-1" aria-label="Sekce vzorníku">
+          <a href="#tmave" class="vz-sub-odkaz aktivni"><span>01</span> Tmavé barvy</a>
+          <a href="#svetle" class="vz-sub-odkaz"><span>02</span> Světlé barvy</a>
+          <a href="#fonty" class="vz-sub-odkaz"><span>03</span> Fonty</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TMAVÉ BARVY ===== -->
+  <section class="vz-sekce" id="tmave">
+    <div class="vz-shell">
+      <div class="vz-head reveal">
+        <span class="sekce-stitek">01 · PALETA</span>
+        <h2 class="sekce-nadpis">Tmavé <span class="it">barvy</span></h2>
+        <p class="sekce-popis">Hluboké, syté tóny — pro značky se silným charakterem a noční eleganci.</p>
+      </div>
+
+      <div class="vz-grid" data-grid="tmave">
+        
+      </div>
+
+      <div class="vz-prepinac">
+        <button class="vz-tlacitko" data-toggle="tmave">
+          <span class="vz-tl-text">Zobrazit vše</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SVĚTLÉ BARVY ===== -->
+  <section class="vz-sekce vz-sekce--alt" id="svetle">
+    <div class="vz-shell">
+      <div class="vz-head reveal">
+        <span class="sekce-stitek tmava">02 · PALETA</span>
+        <h2 class="sekce-nadpis svetla"><span class="pomlcka"></span>Světlé <span class="it">barvy</span></h2>
+        <p class="sekce-popis svetla">Krémové, mléčné a pastelové tóny — pro vzdušné, jemné a vzdušné kompozice.</p>
+      </div>
+
+      <div class="vz-grid" data-grid="svetle"></div>
+
+      <div class="vz-prepinac">
+        <button class="vz-tlacitko svetly" data-toggle="svetle">
+          <span class="vz-tl-text">Zobrazit vše</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FONTY ===== -->
+  <section class="vz-sekce" id="fonty">
+    <div class="vz-shell">
+      <div class="vz-head reveal">
+        <span class="sekce-stitek">03 · TYPOGRAFIE</span>
+        <h2 class="sekce-nadpis">Fonty <span class="it">&amp; písma</span></h2>
+        <p class="sekce-popis">Pečlivě vybraná typografie — serify pro eleganci, grotesky pro modernost.</p>
+      </div>
+
+      <div class="vz-grid vz-grid--fonty" data-grid="fonty"></div>
+
+      <div class="vz-prepinac">
+        <button class="vz-tlacitko" data-toggle="fonty">
+          <span class="vz-tl-text">Zobrazit vše</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="dbl-footer">© 2025 Designs By Lovers · Made with love</footer>
+
+  <script src="script-index.js"></script>
+  <script src="script-vzornik.js"></script>
+</body>
+</html>

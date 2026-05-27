@@ -1,0 +1,276 @@
+/* ===== Ceník — subpage styles ===== */
+:root {
+  --c-ink: #4a0909;
+  --c-deep: #4c300e;
+  --c-accent: #821515;
+  --c-steel: #bd9e7a;
+  --c-cream: #ffe9be;
+  --c-cream-soft: #f7e0b3;
+}
+
+.cenik-page { background: linear-gradient(135deg, #3d0a0a, #5a1414 50%, #3d0a0a); }
+.hero--mini { min-height: auto; padding-bottom: 30px; }
+.nav-odkaz.aktivni::after, .nav-link.aktivni::after { transform: scaleX(1); }
+
+/* ===== HERO ===== */
+.cenik-hero {
+  padding: 60px 0 30px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cenik-hero-text { display: flex; flex-direction: column; gap: 26px; align-items: center; }
+.cenik-hero .eyebrow { justify-content: center; }
+.cenik-h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--c-cream);
+}
+.cenik-h1 .it { font-style: italic; color: var(--c-steel); }
+.cenik-lead {
+  max-width: 560px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255,233,190,0.78);
+}
+.cenik-meta {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,233,190,0.6);
+}
+.cenik-meta b { color: var(--c-cream); font-weight: 600; }
+.cenik-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,233,190,0.4); }
+
+/* ===== SEKCE ===== */
+.cenik-sekce {
+  padding: 120px 6% 140px;
+  position: relative;
+  overflow: hidden;
+}
+.cenik-sekce {
+  background: linear-gradient(180deg, var(--c-cream) 0%, var(--c-cream-soft) 100%);
+  color: var(--c-deep);
+}
+.cenik-sekce::before {
+  content: "PRICES";
+  position: absolute; top: 30px; right: 5%;
+  font-size: clamp(6rem, 16vw, 16rem);
+  font-weight: 900; letter-spacing: 12px;
+  color: rgba(74,9,9,0.06); pointer-events: none; line-height: 1;
+}
+.cenik-sekce--alt {
+  background: linear-gradient(180deg, #3d0a0a 0%, #5a1414 100%);
+  color: var(--c-cream);
+}
+.cenik-sekce--alt::before {
+  content: "PACKAGES";
+  color: rgba(255,233,190,0.05);
+}
+
+.cenik-shell { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+.cenik-head { text-align: center; margin-bottom: 60px; }
+
+.sekce-stitek {
+  display: inline-block;
+  background: var(--c-ink); color: var(--c-cream);
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 0.65rem; letter-spacing: 0.3em; font-weight: 600;
+  margin-bottom: 22px;
+}
+.sekce-stitek.tmava { background: var(--c-cream); color: var(--c-ink); }
+.sekce-nadpis {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  color: var(--c-ink); font-weight: 500;
+  line-height: 0.95; margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.sekce-nadpis.svetla { color: var(--c-cream); }
+.sekce-nadpis .it { font-style: italic; color: var(--c-accent); }
+.sekce-nadpis.svetla .it { color: var(--c-steel); }
+.sekce-nadpis .pomlcka {
+  display: inline-block; width: 50px; height: 3px;
+  background: var(--c-steel); vertical-align: middle; margin-right: 16px;
+}
+.sekce-popis {
+  font-size: 1.02rem; line-height: 1.7;
+  color: var(--c-deep); max-width: 580px; margin: 0 auto;
+}
+.sekce-popis.svetla { color: rgba(255,233,190,0.78); }
+
+/* ===== KARTA CENÍKU ===== */
+.cenik-karta {
+  background: var(--c-cream);
+  border: 1px solid rgba(74,9,9,0.18);
+  border-radius: 28px;
+  padding: 40px 44px;
+  box-shadow: 0 30px 60px rgba(74,9,9,0.18);
+  position: relative;
+  overflow: hidden;
+}
+.cenik-karta::after {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--c-ink), var(--c-accent), var(--c-steel));
+}
+.cenik-karta.tmava {
+  background: linear-gradient(160deg, #2d0707 0%, #4a0909 100%);
+  border: 1px solid rgba(255,233,190,0.18);
+  color: var(--c-cream);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+}
+
+.karta-hlavicka {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 22px; margin-bottom: 18px;
+  border-bottom: 1px dashed rgba(74,9,9,0.25);
+}
+.cenik-karta.tmava .karta-hlavicka { border-bottom-color: rgba(255,233,190,0.2); }
+.karta-label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem; font-style: italic; color: var(--c-ink);
+}
+.cenik-karta.tmava .karta-label { color: var(--c-cream); }
+.karta-podlabel {
+  font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--c-accent); font-weight: 600;
+}
+.cenik-karta.tmava .karta-podlabel { color: var(--c-steel); }
+
+/* ===== ŘÁDKY ===== */
+.cenik-radky { list-style: none; padding: 0; margin: 0; }
+.cenik-radek {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 16px 8px;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(.2,.7,.2,1);
+  position: relative;
+  cursor: default;
+}
+.cenik-radek .popis {
+  font-size: 1rem; font-weight: 500;
+  color: var(--c-ink);
+  flex-shrink: 0;
+}
+.cenik-radek .popis small {
+  font-size: 0.75rem; font-weight: 400; opacity: 0.7; margin-left: 4px;
+}
+.cenik-karta.tmava .cenik-radek .popis { color: var(--c-cream); }
+.cenik-radek .tecky {
+  flex: 1; align-self: center;
+  border-bottom: 2px dotted rgba(74,9,9,0.35);
+  min-width: 30px; height: 1px; margin: 0 6px;
+  transition: border-color 0.4s;
+}
+.cenik-karta.tmava .cenik-radek .tecky { border-bottom-color: rgba(255,233,190,0.3); }
+.cenik-radek .cena {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem; font-weight: 600;
+  color: var(--c-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(.2,.7,.2,1);
+}
+.cenik-radek .cena small {
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem; font-weight: 400; letter-spacing: 0.04em;
+  color: var(--c-deep); margin-left: 2px;
+}
+.cenik-karta.tmava .cenik-radek .cena { color: var(--c-steel); }
+.cenik-karta.tmava .cenik-radek .cena small { color: rgba(255,233,190,0.6); }
+
+.cenik-radek:hover {
+  background: linear-gradient(90deg, rgba(130,21,21,0.08), rgba(130,21,21,0.02));
+  transform: translateX(6px);
+}
+.cenik-karta.tmava .cenik-radek:hover {
+  background: linear-gradient(90deg, rgba(255,233,190,0.08), rgba(255,233,190,0.02));
+}
+.cenik-radek:hover .cena {
+  color: var(--c-ink); transform: scale(1.05);
+}
+.cenik-karta.tmava .cenik-radek:hover .cena { color: var(--c-cream); }
+
+.cenik-radek.doporuceno {
+  background: linear-gradient(90deg, rgba(130,21,21,0.12), transparent);
+  border: 1px solid rgba(130,21,21,0.25);
+}
+.cenik-karta.tmava .cenik-radek.doporuceno {
+  background: linear-gradient(90deg, rgba(255,233,190,0.12), transparent);
+  border: 1px solid rgba(255,233,190,0.25);
+}
+.cenik-radek.doporuceno::before {
+  content: "★ TOP";
+  position: absolute; top: -10px; right: 20px;
+  background: var(--c-ink); color: var(--c-cream);
+  padding: 3px 10px; border-radius: 12px;
+  font-size: 0.55rem; letter-spacing: 0.25em; font-weight: 700;
+}
+.cenik-karta.tmava .cenik-radek.doporuceno::before {
+  background: var(--c-cream); color: var(--c-ink);
+}
+
+.cenik-radek.skupina {
+  margin-top: 26px; padding: 10px 8px 6px;
+  border-top: 1px dashed rgba(74,9,9,0.2);
+  pointer-events: none;
+}
+.cenik-karta.tmava .cenik-radek.skupina { border-top-color: rgba(255,233,190,0.2); }
+.cenik-radek.skupina:first-child { margin-top: 0; border-top: none; }
+.skupina-label {
+  font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--c-accent); font-weight: 700;
+}
+.cenik-karta.tmava .skupina-label { color: var(--c-steel); }
+
+/* ===== CTA ===== */
+.cenik-cta {
+  text-align: center; margin-top: 60px;
+  display: flex; flex-direction: column; align-items: center; gap: 22px;
+}
+.cenik-cta p {
+  font-size: 1.05rem; color: rgba(255,233,190,0.78);
+  font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.3rem;
+}
+.cenik-tlacitko {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 36px; border-radius: 999px;
+  background: var(--c-cream); color: var(--c-ink);
+  text-decoration: none;
+  font-size: 0.72rem; letter-spacing: 0.28em; font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  position: relative; overflow: hidden;
+}
+.cenik-tlacitko::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--c-accent), var(--c-ink));
+  opacity: 0; transition: opacity 0.5s;
+}
+.cenik-tlacitko > * { position: relative; z-index: 1; transition: color 0.5s; }
+.cenik-tlacitko:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); color: var(--c-cream); }
+.cenik-tlacitko:hover::before { opacity: 1; }
+.cenik-tlacitko svg { transition: transform 0.5s; }
+.cenik-tlacitko:hover svg { transform: translateX(4px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px) {
+  .cenik-sekce { padding: 80px 5% 100px; }
+  .cenik-karta { padding: 30px 22px; border-radius: 22px; }
+  .karta-hlavicka { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .cenik-radek { flex-wrap: wrap; padding: 14px 6px; gap: 8px; }
+  .cenik-radek .tecky { display: none; }
+  .cenik-radek .popis { flex: 1; font-size: 0.92rem; }
+  .cenik-radek .cena { font-size: 1.05rem; }
+}
+@media (max-width: 480px) {
+  .cenik-h1 { font-size: 3.2rem; }
+  .cenik-radek .popis { font-size: 0.86rem; }
+  .cenik-radek .cena { font-size: 0.98rem; }
+  .cenik-radek .cena small { display: block; margin-left: 0; }
+}

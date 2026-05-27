@@ -1,0 +1,359 @@
+/* ============================================================
+   WEBY — podstránka portfolia
+   Dědí typografii a tokeny z style-index.css.
+   Každý projekt má vlastní brand barvy přes inline CSS variables:
+   --brand, --brand-dark, --brand-bg1, --brand-bg2, --brand-ink
+   ============================================================ */
+
+.weby-page { background: linear-gradient(135deg, #3d0a0a, #5a1414, #3d0a0a); }
+
+/* ---- HERO MINI ---- */
+.hero--mini { min-height: auto; padding-bottom: 80px; }
+.hero--mini .hero-shell { min-height: auto; }
+
+.nav-link.aktivni { opacity: 1; }
+.nav-link.aktivni::after { transform: scaleX(1); }
+
+.weby-hero {
+  padding: 80px 0 40px;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.weby-h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2.8rem, 8vw, 6.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: #f3ead3;
+}
+.weby-h1 .it { font-style: italic; color: #f3ead3; position: relative; }
+.weby-h1 .it::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 6px;
+  width: 100%; height: 6px;
+  background: linear-gradient(90deg, transparent, rgba(243,234,211,0.35), transparent);
+  filter: blur(2px);
+}
+.weby-intro {
+  max-width: 640px;
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: rgba(243,234,211,0.75);
+}
+.weby-meta {
+  display: flex; flex-wrap: wrap; gap: 18px; align-items: center;
+  color: rgba(243,234,211,0.55);
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+.weby-meta b { color: #f3ead3; font-weight: 600; margin-right: 6px; }
+.weby-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(243,234,211,0.4); }
+
+/* ============================================================
+   PROJEKT — společné
+   ============================================================ */
+.projekt {
+  position: relative;
+  padding: 140px clamp(20px, 5vw, 64px);
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--brand-ink);
+}
+.projekt-pozadi {
+  position: absolute; inset: 0; z-index: -2;
+  background: radial-gradient(circle at 30% 30%, var(--brand-bg1) 0%, var(--brand-bg2) 100%);
+}
+.projekt-pozadi.svetla {
+  background: linear-gradient(180deg, var(--brand-bg1) 0%, var(--brand-bg2) 100%);
+}
+.projekt-mrizka {
+  position: absolute; inset: 0; z-index: -1; opacity: 0.08;
+  background-image:
+    linear-gradient(var(--brand) 1px, transparent 1px),
+    linear-gradient(90deg, var(--brand) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+.projekt-mrizka.svetla { opacity: 0.05; }
+
+.projekt-shell {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.projekt-cislo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(8rem, 22vw, 22rem);
+  font-weight: 400;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--brand);
+  opacity: 0.18;
+  position: absolute;
+  top: -120px;
+  right: -10px;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+.projekt-cislo-brazda {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(8rem, 22vw, 22rem);
+  font-weight: 400;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(0, 55, 0);
+  opacity: 0.18;
+  position: absolute;
+  top: -120px;
+  right: -10px;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+.projekt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.projekt-grid.obracene { direction: rtl; }
+.projekt-grid.obracene > * { direction: ltr; }
+
+/* ---- TEXT ---- */
+.projekt-stitek {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid color-mix(in oklab, var(--brand) 50%, transparent);
+  border-radius: 999px;
+  color: var(--brand);
+  background: color-mix(in oklab, var(--brand) 8%, transparent);
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+.projekt-brazda {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border: 1px solid rgb(0, 46, 0);
+  border-radius: 999px;
+  color: rgb(0, 123, 0);
+  background-color: rgba(2, 124, 51, 0.297);
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+.projekt-nadpis {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--brand-ink);
+  margin-bottom: 28px;
+}
+.projekt-nadpis .ak {
+  font-style: italic;
+  color: var(--brand);
+  background: linear-gradient(90deg, var(--brand), color-mix(in oklab, var(--brand) 60%, white));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: shimmer 6s ease-in-out infinite;
+}
+.projekt-nadpis .zelebra {
+  color: rgb(1, 42, 1);
+}
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.projekt-popis {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: color-mix(in oklab, var(--brand-ink) 80%, transparent);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.projekt-info {
+  display: flex; flex-wrap: wrap; gap: 36px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  border-top: 1px solid color-mix(in oklab, var(--brand-ink) 18%, transparent);
+  border-bottom: 1px solid color-mix(in oklab, var(--brand-ink) 18%, transparent);
+}
+.projekt-info > div { display: flex; flex-direction: column; gap: 4px; }
+.projekt-info span {
+  font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: color-mix(in oklab, var(--brand-ink) 55%, transparent);
+}
+.projekt-info b {
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.swatch {
+  display: inline-block; width: 14px; height: 14px; border-radius: 4px;
+  box-shadow: 0 2px 8px color-mix(in oklab, currentColor 30%, transparent);
+}
+
+/* ---- CTA ---- */
+.projekt-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 20px 36px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(.2,.7,.2,1), box-shadow 0.5s, background 0.5s;
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--brand) 40%, transparent);
+  will-change: transform;
+}
+.projekt-cta::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+.projekt-cta:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 22px 50px color-mix(in oklab, var(--brand) 55%, transparent);
+}
+.projekt-cta:hover::before { transform: translateX(100%); }
+.projekt-cta svg { transition: transform 0.5s cubic-bezier(.2,.7,.2,1); }
+.projekt-cta:hover svg { transform: translateX(6px); }
+
+/* ---- MEDIA ---- */
+.projekt-media {
+  position: relative;
+  perspective: 1400px;
+}
+.media-ramecek {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 80px color-mix(in oklab, var(--brand-dark) 40%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--brand) 25%, transparent) inset;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2,.7,.2,1), box-shadow 0.6s;
+  background: var(--brand-dark);
+  aspect-ratio: 4 / 3;
+}
+.media-ramecek img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter 0.6s;
+}
+.projekt-media:hover .media-ramecek img { transform: scale(1.04); filter: saturate(1.1); }
+.projekt-media:hover .media-ramecek {
+  box-shadow:
+    0 45px 100px color-mix(in oklab, var(--brand-dark) 55%, transparent),
+    0 0 0 1px color-mix(in oklab, var(--brand) 45%, transparent) inset,
+    0 0 80px color-mix(in oklab, var(--brand) 30%, transparent);
+}
+.media-shine {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.18) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+.projekt-media:hover .media-shine { transform: translateX(100%); }
+
+.media-badge {
+  position: absolute; top: 18px; left: 18px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  display: inline-flex; align-items: center; gap: 8px;
+  z-index: 3;
+}
+.media-badge::before {
+  content: ""; width: 6px; height: 6px; border-radius: 50%;
+  background: #4ade80; box-shadow: 0 0 8px #4ade80;
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.media-watermark {
+  margin-top: 18px;
+  font-size: 0.65rem;
+  letter-spacing: 0.4em;
+  color: color-mix(in oklab, var(--brand-ink) 35%, transparent);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+/* ============================================================
+   OUTRO
+   ============================================================ */
+.weby-outro {
+  background: #4a0909;
+  padding: 120px 8% 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.weby-outro::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(243,234,211,0.08), transparent 60%);
+}
+.outro-shell { position: relative; max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.outro-shell h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  color: #f3ead3;
+  line-height: 1.1;
+}
+.outro-shell p {
+  color: rgba(243,234,211,0.7);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .projekt { padding: 80px 24px; }
+  .projekt-grid, .projekt-grid.obracene { grid-template-columns: 1fr; direction: ltr; gap: 48px; }
+  .projekt-cislo { font-size: 9rem; top: -30px; right: 0; }
+  .weby-hero { padding: 40px 0 20px; }
+  .projekt-info { gap: 24px; }
+}
+@media (max-width: 600px) {
+  .projekt-nadpis { font-size: 2.6rem; }
+  .projekt-cta { padding: 16px 26px; font-size: 0.65rem; }
+  .media-ramecek { border-radius: 20px; }
+}

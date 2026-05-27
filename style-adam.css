@@ -1,0 +1,216 @@
+/* ===== Pan Adam — subpage styles ===== */
+:root {
+  --m-ink: #4a0909;
+  --m-deep: #4c300e;
+  --m-accent: #821515;
+  --m-steel: #bd9e7a;
+  --m-cream: #ffe9be;
+  --m-cream-soft: #f7e0b3;
+}
+
+.adam-page { background: linear-gradient(135deg, #3d0a0a, #5a1414 50%, #3d0a0a); }
+.hero--mini { min-height: auto; padding-bottom: 40px; }
+.nav-odkaz.aktivni::after, .nav-link.aktivni::after { transform: scaleX(1); }
+
+/* ===== HERO ===== */
+.adam-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 60px 0 40px;
+  position: relative;
+  z-index: 5;
+}
+.adam-hero-text { display: flex; flex-direction: column; gap: 28px; }
+.adam-h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8.5vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--m-cream);
+}
+.adam-h1 .it { font-style: italic; color: var(--m-steel); }
+.adam-lead {
+  max-width: 480px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(232,240,250,0.78);
+}
+.adam-lead b { color: var(--m-cream); font-weight: 500; }
+.adam-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(232,240,250,0.6);
+}
+.adam-meta b { color: var(--m-cream); font-weight: 600; }
+.adam-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(232,240,250,0.4); }
+
+/* HERO foto */
+.adam-hero-foto { position: relative; perspective: 1200px; }
+.foto-ramecek {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #2d0707;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.55);
+  aspect-ratio: 4/5;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.foto-ramecek img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.foto-ramecek:hover img { transform: scale(1.04); }
+.foto-stitek {
+  position: absolute; top: 18px; left: 18px;
+  background: var(--m-cream); color: var(--m-ink);
+  padding: 6px 12px; border-radius: 20px;
+  font-size: 0.6rem; letter-spacing: 0.3em; font-weight: 700;
+}
+.foto-podpis {
+  margin-top: 14px; text-align: right;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; font-size: 1.1rem;
+  color: rgba(232,240,250,0.7);
+}
+
+/* ===== SEKCE O MNĚ + KONTAKTY ===== */
+.sekce-omne {
+  background: linear-gradient(180deg, var(--m-cream) 0%, var(--m-cream-soft) 100%);
+  color: var(--m-deep);
+  padding: 140px 8% 160px;
+  position: relative;
+  overflow: hidden;
+}
+.sekce-omne::before {
+  content: "ABOUT";
+  position: absolute; top: 20px; right: 5%;
+  font-size: clamp(6rem, 16vw, 16rem);
+  font-weight: 900; letter-spacing: 12px;
+  color: rgba(11,26,46,0.06); pointer-events: none; line-height: 1;
+}
+.omne-shell {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px;
+  align-items: start; position: relative; z-index: 2;
+}
+.sekce-stitek {
+  display: inline-block;
+  background: var(--m-ink); color: var(--m-cream);
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 0.65rem; letter-spacing: 0.3em; font-weight: 600;
+  margin-bottom: 22px;
+}
+.sekce-stitek.tmava { background: var(--m-cream); color: var(--m-ink); border: 1px solid var(--m-ink); }
+.sekce-nadpis {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--m-ink); font-weight: 500;
+  line-height: 0.95; margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.sekce-nadpis .it { font-style: italic; color: var(--m-accent); }
+.sekce-nadpis.svetla { color: var(--m-ink); }
+.sekce-nadpis .pomlcka {
+  display: inline-block; width: 50px; height: 3px;
+  background: var(--m-accent); vertical-align: middle; margin-right: 16px;
+}
+.omne-text p {
+  font-size: 1.05rem; line-height: 1.85; color: var(--m-deep);
+  margin-bottom: 22px; max-width: 540px;
+}
+.omne-text p b { color: var(--m-ink); }
+.omne-text p i { color: var(--m-accent); font-style: italic; }
+
+.adam-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 32px; border-radius: 999px;
+  background: var(--m-ink); color: var(--m-cream);
+  text-decoration: none;
+  font-size: 0.72rem; letter-spacing: 0.28em; font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  position: relative; overflow: hidden;
+  margin-top: 14px;
+}
+.adam-cta::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--m-accent), var(--m-ink));
+  opacity: 0; transition: opacity 0.5s;
+}
+.adam-cta > * { position: relative; z-index: 1; }
+.adam-cta:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(11,26,46,0.35); }
+.adam-cta:hover::before { opacity: 1; }
+.adam-cta svg { transition: transform 0.5s; }
+.adam-cta:hover svg { transform: translateX(4px); }
+
+/* Kontakty */
+.kontakty-blok {
+  display: flex; flex-direction: column;
+  padding: 44px 38px;
+  background: linear-gradient(160deg, rgba(11,26,46,0.05), rgba(43,108,181,0.08));
+  border: 1px solid rgba(11,26,46,0.12);
+  border-radius: 32px;
+  position: relative;
+  backdrop-filter: blur(8px);
+}
+.kontakty-popis {
+  font-size: 0.98rem; line-height: 1.75;
+  color: var(--m-deep); margin-bottom: 28px; max-width: 420px;
+}
+.adam-kontakty { display: flex; flex-direction: column; gap: 14px; }
+.adam-karta {
+  display: flex; align-items: center; gap: 18px;
+  padding: 22px 24px;
+  background: var(--m-cream);
+  border: 1px solid rgba(11,26,46,0.12);
+  border-radius: 20px;
+  text-decoration: none; color: var(--m-ink);
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  position: relative; overflow: hidden;
+}
+.adam-karta::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--m-accent), var(--m-ink));
+  opacity: 0; transition: opacity 0.5s; z-index: 0;
+}
+.adam-karta > * { position: relative; z-index: 1; }
+.adam-karta:hover {
+  transform: translateY(-4px);
+  border-color: var(--m-ink);
+  box-shadow: 0 20px 40px rgba(11,26,46,0.25);
+  color: var(--m-cream);
+}
+.adam-karta:hover::before { opacity: 1; }
+.karta-ikona {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: var(--m-ink); color: var(--m-cream);
+  display: grid; place-items: center; flex-shrink: 0;
+  transition: all 0.5s;
+}
+.adam-karta:hover .karta-ikona { transform: rotate(-8deg); background: var(--m-cream); color: var(--m-ink); }
+.karta-ikona svg { width: 22px; height: 22px; }
+.karta-info { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.karta-info .lbl { font-size: 0.65rem; letter-spacing: 0.3em; color: var(--m-accent); transition: color 0.5s; }
+.karta-info .val { font-size: 1rem; letter-spacing: 0.04em; }
+.adam-karta:hover .karta-info .lbl { color: var(--m-cream-soft); }
+.karta-sipka {
+  font-size: 1.4rem; opacity: 0.4;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+}
+.adam-karta:hover .karta-sipka { opacity: 1; transform: translateX(6px); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 950px) {
+  .adam-hero { grid-template-columns: 1fr; gap: 50px; padding-top: 30px; }
+  .omne-shell { grid-template-columns: 1fr; gap: 60px; }
+  .sekce-omne { padding: 100px 6%; }
+  .kontakty-blok { padding: 32px 24px; }
+}
+@media (max-width: 600px) {
+  .adam-h1 { font-size: 3.4rem; }
+  .adam-karta { padding: 18px 18px; gap: 14px; }
+  .karta-ikona { width: 44px; height: 44px; }
+  .karta-info .val { font-size: 0.88rem; word-break: break-all; }
+}

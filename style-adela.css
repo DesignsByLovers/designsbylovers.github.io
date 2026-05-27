@@ -1,0 +1,364 @@
+/* ===== Slečna Adéla — subpage styles ===== */
+:root {
+  --a-ink: #4a0909;
+  --a-accent: #821515;
+  --a-brown: #4c300e;
+  --a-tan: #bd9e7a;
+  --a-cream: #ffe9be;
+  --a-cream-soft: #f7e0b3;
+}
+
+.adela-page { background: linear-gradient(135deg, #3d0a0a, #5a1414 50%, #3d0a0a); }
+.hero--mini { min-height: auto; padding-bottom: 40px; }
+.nav-odkaz.aktivni::after, .nav-link.aktivni::after { transform: scaleX(1); }
+
+/* ===== HERO ===== */
+.adela-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 60px 0 40px;
+  position: relative;
+  z-index: 5;
+}
+.adela-hero-text { display: flex; flex-direction: column; gap: 28px; }
+.adela-h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: clamp(3rem, 8.5vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: #f3ead3;
+}
+.adela-h1 .it { font-style: italic; color: var(--a-cream); }
+.adela-lead {
+  max-width: 480px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(243,234,211,0.78);
+}
+.adela-lead b { color: var(--a-cream); font-weight: 500; }
+.adela-meta {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(243,234,211,0.6);
+}
+.adela-meta b { color: var(--a-cream); font-weight: 600; }
+.adela-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(243,234,211,0.4); }
+
+/* HERO foto */
+.adela-hero-foto { position: relative; perspective: 1200px; }
+.foto-ramecek {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #2d0707;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.55);
+  aspect-ratio: 4/5;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.foto-ramecek img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.foto-ramecek:hover img { transform: scale(1.04); }
+.foto-stitek {
+  position: absolute; top: 18px; left: 18px;
+  background: var(--a-cream); color: var(--a-ink);
+  padding: 6px 12px; border-radius: 20px;
+  font-size: 0.6rem; letter-spacing: 0.3em; font-weight: 700;
+}
+.foto-podpis {
+  margin-top: 14px; text-align: right;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic; font-size: 1.1rem;
+  color: rgba(243,234,211,0.7);
+}
+
+/* ===== SEKCE O MNĚ (světlá cream) ===== */
+.sekce-omne {
+  background: var(--a-cream);
+  color: var(--a-brown);
+  padding: 140px 8% 160px;
+  position: relative;
+  overflow: hidden;
+}
+.sekce-omne::before {
+  content: "ABOUT";
+  position: absolute; top: 20px; right: 5%;
+  font-size: clamp(6rem, 16vw, 16rem);
+  font-weight: 900; letter-spacing: 12px;
+  color: rgba(74,9,9,0.06); pointer-events: none; line-height: 1;
+}
+.omne-shell {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  align-items: center; position: relative; z-index: 2;
+}
+.sekce-stitek {
+  display: inline-block;
+  background: var(--a-ink); color: var(--a-cream);
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 0.65rem; letter-spacing: 0.3em; font-weight: 600;
+  margin-bottom: 22px;
+}
+.sekce-stitek.tmava { background: var(--a-cream); color: var(--a-ink); }
+.sekce-nadpis {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  color: var(--a-ink); font-weight: 500;
+  line-height: 0.95; margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+.sekce-nadpis .it { font-style: italic; color: var(--a-accent); }
+.sekce-nadpis.svetla { color: var(--a-cream); }
+.sekce-nadpis.svetla .it { color: var(--a-tan); }
+.sekce-nadpis .pomlcka {
+  display: inline-block; width: 50px; height: 3px;
+  background: var(--a-accent); vertical-align: middle; margin-right: 16px;
+}
+.omne-text p {
+  font-size: 1.05rem; line-height: 1.85; color: var(--a-brown);
+  margin-bottom: 30px; max-width: 520px;
+}
+.omne-text p b { color: var(--a-ink); }
+
+.adela-cta {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 18px 32px; border-radius: 999px;
+  background: var(--a-ink); color: var(--a-cream);
+  text-decoration: none;
+  font-size: 0.72rem; letter-spacing: 0.28em; font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  position: relative; overflow: hidden;
+}
+.adela-cta::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--a-accent), var(--a-ink));
+  opacity: 0; transition: opacity 0.5s;
+}
+.adela-cta > * { position: relative; z-index: 1; }
+.adela-cta:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(74,9,9,0.35); }
+.adela-cta:hover::before { opacity: 1; }
+.adela-cta svg { transition: transform 0.5s; }
+.adela-cta:hover svg { transform: translateY(3px); }
+
+.omne-galerie { position: relative; height: 540px; }
+.omne-img {
+  position: absolute; border-radius: 24px; overflow: hidden;
+  box-shadow: 0 30px 60px rgba(74,9,9,0.3);
+  transition: transform 0.7s cubic-bezier(.2,.7,.2,1);
+}
+.omne-img img { width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+.omne-img:hover img { transform: scale(1.05); }
+.omne-img-1 { width: 75%; height: 70%; top: 0; right: 0; transform: rotate(2deg); }
+.omne-img-2 {
+  width: 45%; height: 45%; bottom: 0; left: 0;
+  transform: rotate(-4deg); border: 6px solid var(--a-cream);
+}
+.omne-img-cislo {
+  position: absolute; bottom: 10px; right: 5%;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(5rem, 10vw, 9rem); font-style: italic;
+  color: var(--a-accent); opacity: 0.18; line-height: 1; pointer-events: none;
+}
+
+/* ===== SEKCE SKILLS + KONTAKTY (tmavá ink) ===== */
+.sekce-skill {
+  background: linear-gradient(180deg, var(--a-ink) 0%, #2d0606 100%);
+  color: var(--a-cream);
+  padding: 140px 8% 160px;
+  position: relative; overflow: hidden;
+}
+.sekce-skill::before {
+  content: "SKILLS";
+  position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+  font-size: clamp(7rem, 18vw, 18rem);
+  font-weight: 900; letter-spacing: 28px;
+  color: rgba(255,233,190,0.04); white-space: nowrap;
+  pointer-events: none; line-height: 1;
+}
+.skill-shell {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px;
+  position: relative; z-index: 2;
+}
+.skill-popis {
+  font-size: 1.02rem; line-height: 1.85;
+  color: rgba(255,233,190,0.75); margin-bottom: 40px; max-width: 560px;
+}
+.skill-popis b, .skill-popis i { color: var(--a-cream); }
+
+.skill-list { list-style: none; display: flex; flex-direction: column; gap: 22px; }
+.skill-list li {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 20px; align-items: center;
+  padding: 18px 22px;
+  background: rgba(255,233,190,0.04);
+  border: 1px solid rgba(255,233,190,0.1);
+  border-radius: 18px;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+}
+.skill-list li:hover {
+  background: rgba(255,233,190,0.08);
+  border-color: rgba(255,233,190,0.25);
+  transform: translateX(6px);
+}
+.skill-zkratka {
+  width: 56px; height: 56px;
+  background: var(--a-cream); color: var(--a-ink);
+  border-radius: 14px;
+  display: grid; place-items: center;
+  font-weight: 800; letter-spacing: 1px; font-size: 0.85rem;
+  transition: transform 0.5s;
+}
+.skill-list li:hover .skill-zkratka { transform: rotate(-6deg); }
+.skill-info h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem; font-weight: 500;
+  color: var(--a-cream); margin-bottom: 10px;
+}
+.skill-bar { height: 4px; background: rgba(255,233,190,0.12); border-radius: 4px; overflow: hidden; }
+.skill-bar span {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--a-tan), var(--a-cream));
+  border-radius: 4px;
+  transition: width 1.6s cubic-bezier(.2,.7,.2,1);
+}
+.skill-list li.in-view .skill-bar span { width: var(--w); }
+.skill-procenta { font-size: 0.9rem; letter-spacing: 0.15em; color: var(--a-tan); }
+
+/* Kontakty */
+.kontakty-blok { display: flex; flex-direction: column; }
+.adela-kontakty { display: flex; flex-direction: column; gap: 16px; }
+.adela-karta {
+  display: flex; align-items: center; gap: 18px;
+  padding: 22px 24px;
+  background: rgba(255,233,190,0.06);
+  border: 1px solid rgba(255,233,190,0.14);
+  border-radius: 20px;
+  text-decoration: none; color: var(--a-cream);
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  position: relative; overflow: hidden;
+}
+.adela-karta::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--a-accent), var(--a-ink));
+  opacity: 0; transition: opacity 0.5s; z-index: 0;
+}
+.adela-karta > * { position: relative; z-index: 1; }
+.adela-karta:hover {
+  transform: translateY(-4px) rotate(-0.5deg);
+  border-color: var(--a-cream);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+.adela-karta:hover::before { opacity: 1; }
+.karta-ikona {
+  width: 50px; height: 50px; border-radius: 14px;
+  background: var(--a-cream); color: var(--a-ink);
+  display: grid; place-items: center; flex-shrink: 0;
+  transition: transform 0.5s;
+}
+.adela-karta:hover .karta-ikona { transform: rotate(-8deg); background: var(--a-tan); }
+.karta-ikona svg { width: 22px; height: 22px; }
+.karta-info { display: flex; flex-direction: column; gap: 4px; }
+.karta-info .lbl { font-size: 0.65rem; letter-spacing: 0.3em; color: var(--a-tan); }
+.karta-info .val { font-size: 1rem; letter-spacing: 0.04em; }
+.adela-karta:hover .karta-info .lbl { color: var(--a-cream); }
+
+/* ===== SEKCE PRIBEH (tan -> cream) ===== */
+.sekce-pribeh {
+  background: linear-gradient(180deg, var(--a-tan) 0%, var(--a-cream) 100%);
+  padding: 140px 8%;
+}
+.pribeh-shell {
+  max-width: 1300px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+}
+.pribeh-blok { position: relative; padding-top: 60px; }
+.pribeh-cislo {
+  position: absolute; top: -20px; left: -10px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 7rem; font-style: italic;
+  color: rgba(74,9,9,0.1); line-height: 1; pointer-events: none;
+}
+.pribeh-blok p {
+  font-size: 1.02rem; line-height: 1.9; color: var(--a-brown);
+  margin: 24px 0 30px; max-width: 520px;
+}
+.pribeh-timeline {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  margin-top: 20px;
+}
+.pribeh-timeline > div {
+  padding: 16px 14px;
+  background: rgba(74,9,9,0.06);
+  border-left: 2px solid var(--a-accent);
+  border-radius: 0 12px 12px 0;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+}
+.pribeh-timeline > div:hover {
+  background: rgba(74,9,9,0.12);
+  transform: translateY(-4px);
+}
+.pribeh-timeline b {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem; font-style: italic; color: var(--a-ink);
+}
+.pribeh-timeline span {
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--a-brown);
+}
+
+.pribeh-tagy { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.pribeh-tagy span {
+  padding: 8px 16px;
+  background: var(--a-ink); color: var(--a-cream);
+  border-radius: 999px;
+  font-size: 0.72rem; letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1);
+  cursor: default;
+}
+.pribeh-tagy span:hover {
+  background: var(--a-accent);
+  transform: translateY(-3px) rotate(-2deg);
+}
+
+/* ===== OUTRO ===== */
+.adela-outro {
+  background: linear-gradient(180deg, var(--a-cream) 0%, var(--a-tan) 100%);
+  padding: 120px 8%;
+  text-align: center;
+}
+.outro-shell { max-width: 720px; margin: 0 auto; }
+.adela-outro h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  color: var(--a-ink); font-weight: 500;
+  line-height: 1.05; margin-bottom: 18px;
+}
+.adela-outro p {
+  color: var(--a-brown); font-size: 1.05rem;
+  line-height: 1.7; margin-bottom: 32px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 950px) {
+  .adela-hero { grid-template-columns: 1fr; gap: 50px; padding-top: 30px; }
+  .omne-shell, .skill-shell, .pribeh-shell { grid-template-columns: 1fr; gap: 60px; }
+  .sekce-omne, .sekce-skill, .sekce-pribeh { padding: 100px 6%; }
+  .omne-galerie { height: 460px; }
+  .pribeh-timeline { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .adela-h1 { font-size: 3.4rem; }
+  .skill-list li { grid-template-columns: 48px 1fr; }
+  .skill-procenta { display: none; }
+  .skill-zkratka { width: 44px; height: 44px; font-size: 0.7rem; }
+  .omne-galerie { height: 380px; }
+}
