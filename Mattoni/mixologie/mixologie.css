@@ -1,0 +1,273 @@
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: #0D234C;
+    color: white;
+}
+
+.nadpis {
+    font-size: 500%;
+    text-align: center;
+    color: #CC0935;
+}
+.uvod {
+    width: 80%;
+    height: auto;
+    background-color: #F5F9FC;
+    margin: auto;
+    border: 2px none #0D234C;
+    border-radius: 20px;
+    padding: 2px;
+    color: #0D234C;
+    text-align: center;
+    box-shadow: 0 0 20px #000000;
+    font-size: 130%;
+}
+
+.nadpisy {
+    color: #CC0935;
+    text-align: center;
+    font-size: 300%;
+}
+
+.GDcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 50px auto;
+    width: 100%;
+}
+
+.GDtext {
+    color: #0D234C;
+    max-width: 800px;
+    width: 100%;
+    background-color: #F5F9FC;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 0 20px #000000;
+    font-size: 130%;
+    margin: 10px;
+}
+.FotoGD {
+    width: 250px;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 0 20px #000000;
+}
+
+
+
+
+
+.medaile-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 0 0 50px 0;
+}
+
+.medaile {
+    width: 25%;
+    min-width: 180px;
+    max-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.kruh {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    color:#0D234C;
+    margin: 0 0 15px 0;
+}
+
+.jmeno {
+    color:#F5F9FC;
+    margin: 0;
+    font-size: 150%;
+}
+
+.drink {
+    color:#F5F9FC;
+    margin: 0;
+    font-size: 150%;
+}
+.stribrna .kruh {
+    background-color: #d9d9d9;
+}
+
+.zlata .kruh {
+    background-color: #f2a100;
+}
+
+.bronzova .kruh {
+    background-color: #b85c1b;
+}
+
+
+
+.sekce-koktejly {
+    width: 100%;
+    padding: 30px;
+}
+.scroll-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0 20px 0;
+    box-sizing: border-box;
+}
+
+.karta {
+    flex: 0 0 320px;
+    width: 320px;
+    min-height: 550px;
+    background-color: #d9dde2;
+    border-radius: 40px;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.karta img {
+    width: 120px;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto 15px auto;
+    object-fit: cover;
+}
+
+.karta h3 {
+    color:#CC0935;
+    font-size: 200%;
+    font-weight: normal;
+    margin: 0 0 15px 0;
+}
+
+.karta ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+    text-align: left;
+}
+
+.karta ul li {
+    font-size: 135%;
+    color:#0D234C;
+    line-height: 28px;
+    margin: 0 0 10px 0;
+}
+
+
+
+
+
+
+.footer {
+    width: 95%;
+    background-color:#6a0019;
+    padding: 40px 30px 20px 30px;
+    margin: auto;
+    border: none;
+    border-radius: 30px;
+}
+
+.footer-horni {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+
+.footer-sloupec {
+    width: 20%;
+    min-width: 180px;
+}
+
+.footer-sloupec h3 {
+    color:#CC0935;
+    font-size: 160%;
+    font-weight:bold;
+    margin: 0 0 15px 0;
+}
+
+.footer-sloupec ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-sloupec ul li {
+    color: white;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 0 5px 0;
+}
+
+.footer-sloupec ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-sloupec ul li a:hover {
+    color:#CC0935;
+}
+
+.footer-spodni {
+    width: 100%;
+    border-top: 1px solid #ffffff;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-copy {
+    color: white;
+    font-size: 14px;
+}
+
+.footer-pravni {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-pravni a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-pravni a:hover {
+    color:#CC0935;
+}
