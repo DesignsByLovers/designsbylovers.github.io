@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kontakt — Zelený Brázda</title>
+<meta name="description" content="Spojte se s námi. Adresa, telefon a poptávkový formulář.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header"><div class="container inner">
+  <a class="brand" href="traktor.html"><span class="logo">🌱</span> Zelený Brázda</a>
+  <nav class="nav">
+    <a href="traktor.html">Domů</a>
+    <a href="produkty.html">Produkty</a>
+    <a href="o-nas.html">O nás</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+  <a href="kontakt.html" class="btn btn-primary">Poptat stroj</a>
+  <button class="menu-toggle" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="page-hero container reveal">
+  <span class="kicker">Spojte se</span>
+  <h1>Pojďme<br>popovídat o poli.</h1>
+  <p>Napište nám, zavolejte, nebo se stavte na kávu. Demo jízdy zařídíme po celé ČR zdarma — přijedeme s traktorem k vám na statek, ukážeme všechno do detailu a necháme vás jezdit, jak dlouho potřebujete.</p>
+</section>
+
+<section class="container block" style="padding-top:30px">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h2 style="font-size:28px">Kde nás najdete</h2>
+      <ul>
+        <li><span class="ico">📍</span><div><strong>Polní 14, 379 01 Třeboň</strong><br><span style="color:var(--muted);font-size:14px">Hala i prodejna na jedné adrese</span></div></li>
+        <li><span class="ico">📞</span><div><strong>+420 384 555 120</strong><br><span style="color:var(--muted);font-size:14px">Po–Pá 7–17, So 8–12</span></div></li>
+        <li><span class="ico">✉️</span><div><strong>info@zelenybrazda.cz</strong><br><span style="color:var(--muted);font-size:14px">Odpovídáme do 4 hodin</span></div></li>
+        <li><span class="ico">🛠️</span><div><strong>Servis 24/7: +420 800 555 911</strong><br><span style="color:var(--muted);font-size:14px">Výjezdový technik do 6 hodin</span></div></li>
+      </ul>
+      <div style="margin-top:30px;padding:24px;background:var(--cream);border-radius:14px">
+        <p style="font-family:'Fraunces',serif;font-size:20px">„Nejlepší obchodní jednání? Když si sednete na traktor a vyjedete s ním na pole."</p>
+        <p style="margin-top:10px;color:var(--muted);font-size:13px">— Pavel Novák, ředitel prodeje</p>
+      </div>
+    </div>
+
+    <form id="contact-form" class="form reveal">
+      <h2>Poptávkový formulář</h2>
+      <label><span class="lbl">Jméno a příjmení</span><input type="text" required placeholder="Jan Novák"></label>
+      <label><span class="lbl">E-mail</span><input type="email" required placeholder="jan@statek.cz"></label>
+      <label><span class="lbl">Telefon</span><input type="tel" required placeholder="+420 ..."></label>
+      <label><span class="lbl">Co vás zajímá</span>
+        <select required>
+          <option value="">— vyberte —</option>
+          <option>Demo jízda traktoru</option>
+          <option>Cenová nabídka kombajnu</option>
+          <option>Servisní zásah</option>
+          <option>Náhradní díly</option>
+          <option>Něco jiného</option>
+        </select>
+      </label>
+      <label>
+        <span class="lbl">Orientační rozpočet</span>
+        <div class="range-wrap">
+          <input id="budget" type="range" min="200000" max="5000000" step="50000" value="1200000">
+          <span id="budget-val" class="range-val"></span>
+        </div>
+      </label>
+      <label><span class="lbl">Zpráva</span><textarea required placeholder="Např. zajímá mě T-140 Field, mám 80 ha v okolí Tábora..."></textarea></label>
+      <button type="submit" class="btn btn-primary">Odeslat poptávku →</button>
+    </form>
+
+    <div id="contact-success" class="form success" style="display:none">
+      <h3>Děkujeme! 🌾</h3>
+      <p style="margin-top:16px;color:var(--muted)">Vaše zpráva dorazila. Ozveme se nejpozději do 24 hodin — většinou ale do oběda.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container block" style="padding-top:0">
+  <div class="section-head reveal">
+    <div><span class="kicker">Mapa</span><h2 style="margin-top:10px">Cesta k nám.</h2></div>
+    <p>Z dálnice D3 sjezd Třeboň, pak 4 minuty směr Stará Hlína. Hala je dobře viditelná z hlavní silnice — hledejte zelený sprout na střeše.</p>
+  </div>
+  <div class="reveal" style="aspect-ratio:16/7;border-radius:18px;overflow:hidden;border:1px solid var(--border)">
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=14.75%2C49.0%2C14.79%2C49.02&amp;layer=mapnik" style="width:100%;height:100%;border:0" loading="lazy"></iframe>
+  </div>
+</section>
+
+
+<footer><div class="container">
+  <div class="grid">
+    <div>
+      <h3>Zelený Brázda</h3>
+      <p style="margin-top:10px;max-width:340px">Český výrobce traktorů a zemědělské techniky. Stroje, které rostou s vaším polem — od roku 1998 z Třeboně.</p>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Navigace</p>
+      <ul>
+        <li><a href="traktor.html">Domů</a></li>
+        <li><a href="produkty.html">Produkty</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Kontakt</p>
+      <ul>
+        <li>Polní 14, 379 01 Třeboň</li>
+        <li>+420 384 555 120</li>
+        <li>info@zelenybrazda.cz</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Otvírací doba</p>
+      <ul>
+        <li>Po–Pá: 7:00–17:00</li>
+        <li>So: 8:00–12:00</li>
+        <li>Servis 24/7</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© 2026 Zelený Brázda s.r.o. — Vyrobeno s úctou k půdě.</div>
+</div></footer>
+
+<div class="modal" id="modal">
+  <button class="modal-close" aria-label="Zavřít">×</button>
+  <div class="modal-card">
+    <img src="" alt="">
+    <div class="modal-body">
+      <div class="cat m-cat"></div>
+      <h2 class="m-name" style="margin-top:6px;font-size:32px"></h2>
+      <p class="m-desc" style="margin-top:14px;color:var(--muted)"></p>
+      <div class="specs m-specs" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
+        <div class="price m-price" style="font-family:'Fraunces',serif;font-size:26px;color:var(--primary)"></div>
+        <button class="btn btn-primary m-inquiry">Nezávazná poptávka</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body></html>

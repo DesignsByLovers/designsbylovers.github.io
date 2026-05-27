@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zelený Brázda — Traktory s úctou k půdě</title>
+<meta name="description" content="Český výrobce traktorů a zemědělské techniky. Stroje, které šetří půdu i ruce.">
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header"><div class="container inner">
+  <a class="brand" href="traktor.html"><span class="logo">🌱</span> Zelený Brázda</a>
+  <nav class="nav">
+    <a href="traktor.html">Domů</a>
+    <a href="produkty.html">Produkty</a>
+    <a href="o-nas.html">O nás</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+  <a href="kontakt.html" class="btn btn-primary">Poptat stroj</a>
+  <button class="menu-toggle" aria-label="Menu">☰</button>
+</div></header>
+
+<section class="hero">
+  <div class="hero-bg"><img src="assets/combine-large.jpg" alt="Kombajn na poli za úsvitu"></div>
+  <div class="container reveal">
+    <span class="eyebrow"><span class="dot"></span> Sezóna 2026 — předobjednávky otevřeny</span>
+    <h1>Stroje, které <em>rostou</em><br>s vaším polem.</h1>
+    <p class="lead">Traktory a zemědělská technika navržená v Třeboni. Méně nafty, víc úrody, žádný kompromis na odolnosti. Vlastní R&amp;D, vlastní výroba, vlastní servis — všechno pod jednou střechou. Od malých zahradních strojů po 440koňové kombajny.</p>
+    <div class="cta">
+      <a href="produkty.html" class="btn btn-primary">Prohlédnout produkty →</a>
+      <a href="o-nas.html" class="btn btn-ghost">Náš příběh</a>
+    </div>
+  </div>
+</section>
+
+<section class="container stats">
+  <div class="stats-grid reveal">
+    <div class="stat"><div class="num">27</div><div class="lbl">let na poli</div></div>
+    <div class="stat"><div class="num">14k</div><div class="lbl">strojů v provozu</div></div>
+    <div class="stat"><div class="num">92%</div><div class="lbl">dílů z ČR</div></div>
+    <div class="stat"><div class="num">5 let</div><div class="lbl">záruka pohonu</div></div>
+  </div>
+</section>
+
+<section class="block container">
+  <div class="section-head reveal">
+    <div>
+      <span class="kicker">Filozofie</span>
+      <h2 style="margin-top:10px">Technika, která<br>poslouchá zem.</h2>
+    </div>
+    <p>Každý díl, každý šroub, každá linka v převodovce — vše navrženo tak, aby pole sloužilo i vašim dětem. Tradice je naše R&amp;D oddělení a my ji každý rok obohacujeme o desítky drobných vylepšení od českých techniků, kteří sami hospodaří.</p>
+  </div>
+  <div class="features reveal">
+    <div class="feature"><div class="ico">🌿</div><h3>Šetrné k půdě</h3><p>Nízkotlaké pneumatiky a chytrá hydraulika snižují utužování. Méně sjezdů, vyšší výnos.</p></div>
+    <div class="feature"><div class="ico">🔧</div><h3>Modulární servis</h3><p>Vyměníte modul, ne celý traktor. Průměrná oprava 4× kratší než u konkurence.</p></div>
+    <div class="feature"><div class="ico">🚜</div><h3>Hybrid i HVO</h3><p>Spalovací jednotky certifikované na obnovitelná paliva. Připraveno na příští desetiletí.</p></div>
+    <div class="feature"><div class="ico">🛡️</div><h3>Vyrobeno v Třeboni</h3><p>Každý kus prochází rukou českého technika před expedicí. Žádné anonymní montovny.</p></div>
+  </div>
+</section>
+
+<section class="block container" style="padding-top:0">
+  <div class="section-head reveal">
+    <div>
+      <span class="kicker">Spočítejte si</span>
+      <h2 style="margin-top:10px">Kolik ušetříte<br>s naší technikou?</h2>
+    </div>
+    <p>Dva jednoduché kalkulátory, které vám ukážou, jaký smysl má investice do moderního stroje. Tahejte za posuvníky a měňte konfiguraci — výsledek se mění v reálném čase.</p>
+  </div>
+  <div class="tools-grid">
+    <form id="calc-form" class="tool-card reveal">
+      <h3>Roční úspora nafty</h3>
+      <label><span class="lbl">Výměra pole</span>
+        <div class="range-wrap">
+          <input id="calc-ha" type="range" min="10" max="800" value="120">
+          <span id="calc-ha-val" class="range-val"></span>
+        </div>
+      </label>
+      <div id="calc-out" class="tool-result"></div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px">Odhad oproti průměrnému traktoru z roku 2015. Skutečné hodnoty se liší podle plodiny a půdy.</p>
+    </form>
+    <form id="cfg-form" class="tool-card reveal">
+      <h3>Konfigurátor traktoru</h3>
+      <label><span class="lbl">Výkon</span>
+        <select id="cfg-power">
+          <option value="75">75 HP — Garden</option>
+          <option value="110" selected>110 HP — Classic</option>
+          <option value="180">180 HP — Pro</option>
+          <option value="300">300 HP — Forest XL</option>
+        </select>
+      </label>
+      <label><span class="lbl">Kabina</span>
+        <select id="cfg-cab">
+          <option value="std">Standard</option>
+          <option value="lux">Lux — odpružená, klima, hi-fi</option>
+        </select>
+      </label>
+      <label><span class="lbl">Pneumatiky</span>
+        <select id="cfg-tires">
+          <option value="std">Standardní</option>
+          <option value="forest">Forest — nízkotlaké</option>
+        </select>
+      </label>
+      <div id="cfg-out" class="tool-result"></div>
+    </form>
+  </div>
+</section>
+
+<section class="block container" style="padding-top:0">
+  <div class="testi reveal">
+    <span class="kicker">Co říkají sedláci</span>
+    <blockquote style="margin-top:20px"></blockquote>
+    <cite></cite>
+    <div class="testi-dots"></div>
+  </div>
+</section>
+
+<section class="container" style="padding-bottom:60px">
+  <div class="cta-strip reveal">
+    <div>
+      <h2>Připravte pole<br>na novou sezónu.</h2>
+      <p>Domluvte si nezávaznou prohlídku stroje u vás na statku. Přijedeme s demem zdarma — kdekoliv v ČR, do týdne.</p>
+    </div>
+    <a href="kontakt.html" class="btn btn-accent">Objednat demo jízdu →</a>
+  </div>
+</section>
+
+
+<footer><div class="container">
+  <div class="grid">
+    <div>
+      <h3>Zelený Brázda</h3>
+      <p style="margin-top:10px;max-width:340px">Český výrobce traktorů a zemědělské techniky. Stroje, které rostou s vaším polem — od roku 1998 z Třeboně.</p>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Navigace</p>
+      <ul>
+        <li><a href="traktor.html">Domů</a></li>
+        <li><a href="produkty.html">Produkty</a></li>
+        <li><a href="o-nas.html">O nás</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Kontakt</p>
+      <ul>
+        <li>Polní 14, 379 01 Třeboň</li>
+        <li>+420 384 555 120</li>
+        <li>info@zelenybrazda.cz</li>
+      </ul>
+    </div>
+    <div>
+      <p style="font-size:11px;text-transform:uppercase;letter-spacing:.18em;opacity:.5">Otvírací doba</p>
+      <ul>
+        <li>Po–Pá: 7:00–17:00</li>
+        <li>So: 8:00–12:00</li>
+        <li>Servis 24/7</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© 2026 Zelený Brázda s.r.o. — Vyrobeno s úctou k půdě.</div>
+</div></footer>
+
+<div class="modal" id="modal">
+  <button class="modal-close" aria-label="Zavřít">×</button>
+  <div class="modal-card">
+    <img src="" alt="">
+    <div class="modal-body">
+      <div class="cat m-cat"></div>
+      <h2 class="m-name" style="margin-top:6px;font-size:32px"></h2>
+      <p class="m-desc" style="margin-top:14px;color:var(--muted)"></p>
+      <div class="specs m-specs" style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
+        <div class="price m-price" style="font-family:'Fraunces',serif;font-size:26px;color:var(--primary)"></div>
+        <button class="btn btn-primary m-inquiry">Nezávazná poptávka</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body></html>
