@@ -1,0 +1,214 @@
+html {
+    scroll-behavior: smooth;
+}
+ 
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+.nadpis {
+    width: 100%;
+    padding-bottom: 120px;
+    padding: 20px 0px 20px 0px;
+    color:#CC0935;
+    text-align: center;
+    background: linear-gradient(#0D234C, white);
+    font-size: 300%;
+    text-align: center;
+}
+ 
+.odkdynadpis {
+    font-size: 300%;
+    margin: 10px 0 10px 0px;
+    color: #CC0935
+}
+ 
+.odkdytext {
+    width: 600px;
+    height: 250px;
+    background-color: #0a1936;
+    border: none 2px #F5F9FC;
+    border-radius: 20px;
+    padding: 15px;
+    margin: 0 0 20px 450px;
+    box-shadow: 0 0 10px #F5F9FC;
+    font-size: 150%;
+}
+ 
+.FotoHistorie1 {
+    width: 450px;
+    box-align: right;
+    margin: 40px 0px 0px 10px;
+}
+ 
+.tmava {
+    background-color: #0D234C;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    color: #F5F9FC;
+}
+ 
+ 
+.svetla{
+    background-color: #F5F9FC;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+    color: #0D234C;
+}
+ 
+ 
+.miniobrazek {
+        width: 70px;
+        margin: 10px 0px 0px 10px;
+        border-radius: 100%;
+}
+ 
+ 
+ 
+.nadpisvpravo {
+    font-size: 300%;
+    margin: 10px 0 10px 150px;
+    color: #CC0935
+}
+ 
+.nadpisvlevo {
+    font-size: 300%;
+    margin: 10px 0 10px -150px;
+    color: #CC0935
+}
+ 
+.rsvtext {
+    width: 450px;
+    height: 220px;
+    background-color: #e0f0fc;
+    border: none 2px #F5F9FC;
+    border-radius: 30px;
+    padding: 15px;
+    margin: -330px 0px 0px 500px;
+    box-shadow: 0 0 10px #0D234C;
+    font-size: 150%;
+}
+.FotoHistoriesv {
+    width: 300px;
+    height: 300px;
+    background-color: #e0f0fc;
+    border: none 2px #F5F9FC;
+    border-radius: 20px;
+    margin: -70px 0px 90px -470px;
+    box-shadow: 0 0 10px #0D234C;
+}
+ 
+ 
+ 
+ 
+ 
+.rtmtext {
+    width: 450px;
+    height: 220px;
+    background-color: #0a1936;
+    border: none 2px #F5F9FC;
+    border-radius: 30px;
+    padding: 15px;
+    margin: -330px 0px 0px -500px;
+    box-shadow: 0 0 10px #F5F9FC;
+    font-size: 150%;
+}
+.FotoHistorietm {
+    width: 300px;
+    height: 300px;
+    background-color: #000000;
+    border: none 2px #F5F9FC;
+    border-radius: 20px;
+    margin: -70px 0px 90px 400px;
+    box-shadow: 0 0 10px #F5F9FC;
+}
+ 
+footer {
+    width: 100%;
+    height: auto;
+    background-color: #CC0935;
+}
+.footer {
+    width: 95%;
+    background-color:#6a0019;
+    padding: 40px 30px 20px 30px;
+    margin: auto;
+    border: none;
+    border-radius: 30px;
+}
+
+.footer-horni {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin: 0 0 30px 0;
+}
+
+.footer-sloupec {
+    width: 20%;
+    min-width: 180px;
+}
+
+.footer-sloupec h3 {
+    color:#CC0935;
+    font-size: 160%;
+    font-weight:bold;
+    margin: 0 0 15px 0;
+}
+
+.footer-sloupec ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-sloupec ul li {
+    color: white;
+    font-size: 16px;
+    line-height: 28px;
+    margin: 0 0 5px 0;
+}
+
+.footer-sloupec ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-sloupec ul li a:hover {
+    color:#CC0935;
+}
+
+.footer-spodni {
+    width: 100%;
+    border-top: 1px solid #ffffff;
+    padding: 20px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-copy {
+    color: white;
+    font-size: 14px;
+}
+
+.footer-pravni {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-pravni a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.footer-pravni a:hover {
+    color:#CC0935;
+}
