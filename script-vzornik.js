@@ -92,7 +92,7 @@
 
       el = document.createElement("a");
 
-      el.href = `img/${typ}-${i + 1}.jpg`;
+      el.href = `img/${typ}-${i + 1}.png`;
 
       el.target = "_blank";
     }
@@ -133,7 +133,7 @@
 
       const img = document.createElement("img");
 
-      img.src = `img/${typ}-${i + 1}.jpg`;
+      img.src = `img/${typ}-${i + 1}.png`;
 
       img.alt = `Obrázek ${i + 1}`;
 
