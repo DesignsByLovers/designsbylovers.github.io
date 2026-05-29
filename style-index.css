@@ -877,6 +877,8 @@ a, button, .obrazek,
     text-decoration: none; 
     color: #ffe9be;
     letter-spacing: 3px; 
+    margin-left: 16px;
+    margin-right: 16px;
   }
   #mobilni-menu-toggle:checked ~ .mobilni-menu { 
     display: flex; 
